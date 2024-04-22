@@ -3,6 +3,8 @@ import cors from "cors";
 import PayOS from "@payos/node";
 
 const app = express();
+app.set("view engine", "pug");
+app.set("views", "./views");
 app.use("/assets", express.static("/Users/macbookpro/Documents/Casso/assets"));
 app.use(
   cors({
