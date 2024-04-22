@@ -3,10 +3,7 @@ import cors from "cors";
 import PayOS from "@payos/node";
 
 const app = express();
-app.use(
-  "/assets",
-  express.static("/Users/macbookpro/Documents/Casso/backend/assets")
-);
+app.use("/assets", express.static("/Users/macbookpro/Documents/Casso/assets"));
 app.use(
   cors({
     origin: "*",
