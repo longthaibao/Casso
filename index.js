@@ -1,11 +1,16 @@
 import express, { urlencoded } from "express";
 import cors from "cors";
 import PayOS from "@payos/node";
-
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const app = express();
+
+app.set("views", `${__dirname}/views`);
 app.set("view engine", "pug");
-app.set("views", "./views");
-app.use("/assets", express.static("/Users/macbookpro/Documents/Casso/assets"));
+app.use("/assets", express.static(`${__dirname}/assets`));
+
 app.use(
   cors({
     origin: "*",
