@@ -1,0 +1,113 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  style.
+    .header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    }
+    .search-input {
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    }
+    .search-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    }
+    input:focus {
+    outline: none;
+    }
+    .logo {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    }
+    .icon-search {
+    width: 30px;
+    height: 30px;
+    }
+    .action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+    .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+    }
+    .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .buttonCustom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+    background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    }
+    .buttonCustom:hover {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+    cursor: pointer;
+    }
+    .bookimage{
+    width: 200px;
+    height: 400px;
+    object-fit: contain;
+    }
+  title Buy book
+.header
+  img.logo(src='../assets/images/fahasa-logo.png' alt='')
+  .search-wrapper
+    input.search-input(type='text' placeholder='Search book')
+    div(style='background-color: #C92127; width: 40px; height: 30px; display: flex; justify-content: center; border-radius: 4px;margin-left: 5px;')
+      img.icon-search(src='../assets//images//ico_search_white.svg' alt='')
+  .action
+    .notic.icon
+      img(src='../assets//images//ico_noti_gray.svg' alt='')
+      h6 Th&ocirc;ng b&aacute;o
+    .cart.icon
+      img(src='../assets//images//ico_cart_gray.svg' alt='')
+      h6 Gi&#x1ECF; h&agrave;ng
+    .account.icon
+      img(src='../assets//images//ico_account_gray.svg' alt='')
+      h6 T&agrave;i kho&#x1EA3;n
+.content
+  .card
+    img.bookimage(src='../assets//images//bi_mat_cua_may_man.jpg' alt='')
+    h4 B&iacute; m&#x1EAD;t c&#x1EE7;a may m&#x1EAF;n
+    button.buttonCustom#payButton Link dowload sách ở đây
+script.
+  // Handle payment button click event
+  document.getElementById('payButton').addEventListener('click', async function () {
+  try {
+  const linkDowloadBook="https://drive.google.com/file/d/1DaoW9CH7ri29mHZ5Qtxl6uMo-wH3X4ol/view"
+  window.open(linkDowloadBook, '_blank');
+  } catch (error) {
+  console.error('Error:', error);
+  }
+  });
