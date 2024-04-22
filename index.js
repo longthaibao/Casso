@@ -38,14 +38,11 @@ app.post("/create-payment-link", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-app.use("/home", (req, res) => {
-  res.render("home.pug");
-});
 app.get("/dowloadbook", (req, res) => {
   res.render("success.pug");
 });
-app.get("/", (req, res) => {
-  res.send("Hello World");
+app.use("/", (req, res) => {
+  res.render("home.pug");
 });
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
