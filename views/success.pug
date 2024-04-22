@@ -51,6 +51,7 @@ head
     .content{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
     }
     .card {
     display: flex;
@@ -106,6 +107,10 @@ head
         width: 30px;
         margin-left: 10px;
     }
+    a{
+        text-decoration: none;
+        color: white;
+    }
 
   title Buy book
 .header
@@ -132,14 +137,5 @@ head
     img.bookimage(src='../assets//images//bi_mat_cua_may_man.jpg' alt='')
     h4 B&iacute; m&#x1EAD;t c&#x1EE7;a may m&#x1EAF;n
     h5.title_price Price: 10.000 VND
-    button.buttonCustom#payButton Link dowload sách ở đây
-script.
-  // Handle payment button click event
-  document.getElementById('payButton').addEventListener('click', async function () {
-  try {
-  const linkDowloadBook="https://drive.google.com/file/d/1DaoW9CH7ri29mHZ5Qtxl6uMo-wH3X4ol/view"
-  window.open(linkDowloadBook, '_blank');
-  } catch (error) {
-  console.error('Error:', error);
-  }
-  });
+    .buttonCustom 
+      a(href="https://drive.google.com/file/d/1DaoW9CH7ri29mHZ5Qtxl6uMo-wH3X4ol/view") Link dowload sách ở đây
