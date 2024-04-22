@@ -18,7 +18,7 @@ app.use(
   })
 );
 app.use(urlencoded({ extended: true }));
-app.post("/create-payment-link", async (req, res) => {
+app.get("/create-payment-link", async (req, res) => {
   try {
     const payos = new PayOS(
       "76f689ee-34c1-41fb-a55a-851301c9bf8a",
@@ -32,14 +32,14 @@ app.post("/create-payment-link", async (req, res) => {
       description: "Bí mật của may mắn",
       orderCode: Number(String(Date.now()).slice(-6)),
       returnUrl: "http://localhost:3001/dowloadbook",
-      cancelUrl: "http://localhost:3001/home",
+      cancelUrl: "http://localhost:3001/",
       signature: "string",
     };
 
     // Tạo link thanh toán
     const paymentLink = await payos.createPaymentLink(order);
     const link = paymentLink.checkoutUrl;
-    res.json(link);
+    res.redirect(link);
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ error: "Internal server error" });

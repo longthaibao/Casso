@@ -132,7 +132,7 @@ head
     img.bookimage(src='../assets//images//bi_mat_cua_may_man.jpg' alt='')
     h4 B&iacute; m&#x1EAD;t c&#x1EE7;a may m&#x1EAF;n
     h5.title_price Price: 10.000 VND
-    button.buttonCustom#payButton Mua ngay
+    a(href="/create-payment-link") Mua ngay
 script.
   // Handle payment button click event
   document.getElementById('payButton').addEventListener('click', async function () {
@@ -144,7 +144,7 @@ script.
   },
   }).then(response => response.json())
   .then(data => {
-    window.location.href=(data)
+    window.location.href=data
   })
 
   } catch (error) {
