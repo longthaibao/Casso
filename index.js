@@ -41,7 +41,7 @@ app.post("/create-payment-link", async (req, res) => {
 app.get("/dowloadbook", (req, res) => {
   res.render("success.pug");
 });
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.render("home.pug");
 });
 app.listen(3001, () => {
