@@ -42,7 +42,7 @@ app.get("/dowloadbook", (req, res) => {
   res.render("success.pug");
 });
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.render("home.pug");
 });
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
