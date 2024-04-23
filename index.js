@@ -31,7 +31,7 @@ app.get("/create-payment-link", async (req, res) => {
       amount: 10000,
       description: "Bí mật của may mắn",
       orderCode: Number(String(Date.now()).slice(-6)),
-      returnUrl: "https://casso.vercel-rqt8.app/dowloadbook",
+      returnUrl: "https://casso-rqt8.vercel.app/dowloadbook",
       cancelUrl: "https://casso-rqt8.vercel.app/",
       signature: "string",
     };
